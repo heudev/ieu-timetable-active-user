@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  ieutimetableactiveuser:
+    container_name: ieutimetableactiveuser
+    build: .
+    ports:
+      - 3002:3002
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27018:27018
+    volumes:
+      - data:/data/db
+volumes:
+  data:
